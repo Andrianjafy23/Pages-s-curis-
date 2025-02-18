@@ -39,7 +39,21 @@
 <body>
   <div class="container">
     <h1>Bienvenue sur la page sécurisée !</h1>
+    <h2 id="user-name">Chargement...</h2> <!-- Zone pour afficher le nom -->
     <button onclick="window.location.href='/logout'">Déconnecter</button>
   </div>
+
+  <script>
+    fetch("/user")
+      .then(response => response.json())
+      .then(data => {
+        if (data.name) {
+          document.getElementById("user-name").textContent = "Bonjour, " + data.name + " !";
+        } else {
+          document.getElementById("user-name").textContent = "Utilisateur inconnu";
+        }
+      })
+      .catch(error => console.error("Erreur :", error));
+  </script>
 </body>
 </html>

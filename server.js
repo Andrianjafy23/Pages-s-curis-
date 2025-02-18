@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import path from "path";
 import session from "express-session";
 import { fileURLToPath } from "url";
-import authRoutes from "./routes/routes.js";
+import authRoutes from "./routes/routes.js"; 
 
 dotenv.config();
 
@@ -51,8 +51,17 @@ app.get("/secure", isAuthenticated, (req, res) => {
   res.sendFile(path.join(__dirname, "Front", "secure.html"));
 });
 
+app.get("/user", (req, res) => {
+  if (req.session.userName) {
+    res.json({ name: req.session.userName });
+  } else {
+    res.status(401).json({ message: "Non connecté" });
+  }
+});
+
+
 // Utilise les routes d'authentification
 app.use(authRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Serveur démarré sur le port ${PORT}`));

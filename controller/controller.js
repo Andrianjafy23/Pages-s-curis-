@@ -19,6 +19,7 @@ export const login = async (req, res) => {
                         </script>`);
     }
     req.session.userId = foundUser._id;
+    req.session.userName = foundUser.name;
     res.send(`<script>
                 alert('Connexion réussie!');
                 window.location.href='/secure';
