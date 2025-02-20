@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Login</title>
     <style>
+        *{
+           list-style: none;
+           text-decoration: none;
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -41,7 +45,7 @@
         }
 
         .connecter input {
-            width: 100%;
+            width: 95%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ddd;
@@ -104,12 +108,28 @@
         }
         #mots{
             font-size: 20px;
-            margin-right: 282px;
+            margin-right: 243px;
         }
         #name{
             font-size: 20px;
             margin-right: 366px;
         }
+        .connecter  .butt{
+            width: 70%;
+            padding: 12px;
+            background-color: #5a6d5b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+        .connecter{
+            padding: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -136,6 +156,9 @@
                     <p>Afficher le mots passe</p>
                 </div> 
                 <button type="submit">S'inscrire</button>
+                <button class="butt">
+                    <a href="/">Se connecter</a>
+                </button>
             </form>
         </div>
     </div>

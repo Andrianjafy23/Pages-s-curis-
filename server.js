@@ -27,17 +27,12 @@ app.use(
   })
 );
 
-// Connexion à MongoDB
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => console.log("Connecté à MongoDB Atlas"))
-  .catch((err) => {
-    console.error("Erreur de connexion à MongoDB :", err);
-    process.exit(1); // Quitter l'application en cas d'échec
-  });
+
+
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("Connecté à MongoDB Atlas"))
+    .catch(err => console.error("Erreur de connexion à MongoDB:", err));
+
 
 // Middleware d'authentification
 function isAuthenticated(req, res, next) {

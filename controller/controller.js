@@ -35,6 +35,12 @@ export const login = async (req, res) => {
 
 export const register = async (req, res) => {
   const { name, email, password } = req.body;
+  if (!name || !email || !password) {
+    return res.send(`<script>
+                      alert("Tous les champs sont requis !");
+                      window.history.back();
+                    </script>`);
+  }
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new User({
@@ -51,7 +57,7 @@ export const register = async (req, res) => {
     console.error(err);
     res.send(`<script>
                 alert("Erreur lors de l'inscription!");
-                window.location.href="/";
+                window.location.href="/inscrit";
               </script>`);
   }
 };
