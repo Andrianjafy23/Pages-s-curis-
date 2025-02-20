@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Login</title>
     <style>
         *{
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
-  }
+           list-style: none;
+           text-decoration: none;
+    
+        }
+        h1,label,p,input,button  {
+          font-family: Roboto Condensed, serif;
+          font-optical-sizing: auto;
+          font-weight: weight;
+          font-style: normal;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+
             background-color: #f4f4f4;
             display: flex;
             justify-content: center;
@@ -101,6 +111,21 @@
         .connecter{
             padding: 20px;
         }
+        /* .email{
+            display: flex;
+            flex-direction: column;
+        } */
+        /* label{
+            margin-right: 100px;
+        } */
+        #email{
+             margin-right: 300px;
+             font-size: 20px;
+        }
+        #mots{
+            font-size: 20px;
+            margin-right: 233px;
+        }
     </style>
 </head>
 <body>
@@ -108,8 +133,14 @@
         <h1>Connexion</h1>
         <div class="connecter">
             <form action="/login" method="POST">
-                <input type="email" name="email" placeholder="Entrez votre email" required />
-                <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe" required />
+                <div class="email">
+                    <label id="email" for="">Email :</label>
+                    <input type="email" name="email" placeholder="Entrez votre email" required />
+                </div>
+                <div class="pass">
+                    <label id="mots" for="">Mots de passe :</label>
+                    <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe" required />
+                </div>
                 <div class="motsdepass">
                     <input type="checkbox" id="Afficher"> 
                     <p>Afficher votre mot de passe</p> 

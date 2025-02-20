@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Login</title>
     <style>
         body {
@@ -13,6 +16,12 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+        }
+        h1,label,p,input,button  {
+          font-family: Roboto Condensed, serif;
+          font-optical-sizing: auto;
+          font-weight: weight;
+          font-style: normal;
         }
 
         .login {
@@ -27,7 +36,7 @@
 
         .login h1 {
             color: #333;
-            font-size: 24px;
+            font-size: 30px;
             margin-bottom: 20px;
         }
 
@@ -89,21 +98,42 @@
           margin: 0;
           cursor: pointer;
         }   
+        #email{
+             margin-right: 366px;
+             font-size: 20px;
+        }
+        #mots{
+            font-size: 20px;
+            margin-right: 282px;
+        }
+        #name{
+            font-size: 20px;
+            margin-right: 366px;
+        }
     </style>
 </head>
 <body>
     <div class="login">
         <div>
-            <h1>inscription</h1>
+            <h1>Inscription</h1>
         </div>
         <div class="connecter">
             <form action="/register" method="POST">
-                <input type="text" name="name" placeholder="Entrez votre nom">
-                <input type="email" name="email" placeholder="Entrez votre email" required />
-                <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe" required />
+                <div >
+                    <label id="name" for="">Nom</label>
+                    <input type="text" name="name" placeholder="Entrez votre nom">
+                </div>
+                <div >
+                    <label id="email" for="">Email</label>
+                    <input type="email" name="email" placeholder="Entrez votre email" required />
+                </div>
+                <div >
+                    <label id="mots" for="">Mots de passe</label>
+                    <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe" required />
+                </div>       
                 <div class="motsdepass">
                     <input type="checkbox" id="Afficher">
-                    <p>Afficher votre mot de passe</p>
+                    <p>Afficher le mots passe</p>
                 </div> 
                 <button type="submit">S'inscrire</button>
             </form>
